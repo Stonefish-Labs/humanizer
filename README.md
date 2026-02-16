@@ -28,18 +28,6 @@ When invoked, the agent will:
 3. Add voice and variation where appropriate
 4. Return the humanized version with optional change summary
 
-## Structure
-
-```
-humanizer/
-├── README.md
-├── LICENSE
-├── .gitignore
-└── skills/
-    └── humanizer/
-        └── SKILL.md
-```
-
 ## License
 
 MIT. Original skill by [biostartechnology](https://clawhub.ai/biostartechnology/humanizer).
