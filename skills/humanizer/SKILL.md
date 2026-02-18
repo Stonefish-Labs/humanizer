@@ -1,6 +1,6 @@
 ---
 name: humanizer
-version: 2.1.1
+version: 2.1.2
 source: https://clawhub.ai/biostartechnology/humanizer
 description: |
   Remove signs of AI-generated writing from text. Use when editing or reviewing
@@ -8,7 +8,8 @@ description: |
   comprehensive "Signs of AI writing" guide. Detects and fixes patterns including:
   inflated symbolism, promotional language, superficial -ing analyses, vague
   attributions, em dash overuse, rule of three, AI vocabulary words, negative
-  parallelisms, and excessive conjunctive phrases.
+  parallelisms, templated "Why this matters" sections, and excessive conjunctive
+  phrases.
 allowed-tools:
   - Read
   - Write
@@ -390,10 +391,33 @@ Avoiding AI patterns is only half the job. Sterile, voiceless writing is just as
 
 ---
 
+### 25. "Why this matters" Callouts
+
+**Words to watch:** Why this matters, Why it matters, Here's why this matters, This matters because
+
+**Problem:** GPT-style writing often inserts this phrase as a heading or inline label. It announces importance instead of showing concrete consequences, and it breaks natural flow.
+
+**Rewrite strategy:** Fold the rationale into the sentence with plain causal language (because, so, which means) and name the concrete impact.
+
+**Before (heading):**
+> ### Why this matters
+> The policy reduces review cycles by 25%.
+
+**After:**
+> The policy reduces review cycles by 25%, so approvals move faster during release week.
+
+**Before (inline):**
+> We consolidated alerting into one dashboard. Why this matters: the team can respond faster.
+
+**After:**
+> We consolidated alerting into one dashboard, which helps the team respond faster.
+
+---
+
 ## Process
 
 1. Read the input text carefully
-2. Identify all instances of the patterns above
+2. Identify all instances of the patterns above, including "Why this matters" scaffolding
 3. Rewrite each problematic section
 4. Ensure the revised text:
    - Sounds natural when read aloud
